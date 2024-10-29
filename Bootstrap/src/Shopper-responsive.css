@@ -1,0 +1,152 @@
+.first {
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  padding: 4px 0px;
+  background-color: #F5F5F5;
+  align-items: center;
+  color: black;
+}
+.second {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  color: black;
+  height: 80px;
+}
+.center {
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 50px;
+  align-content: center;
+}
+.two span {
+  font-size: 14px;
+  padding: 8px 16px;
+  color: #1F1F1F;
+}
+.three span {
+  margin-right: 14px;
+}
+.four span {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #1F1F1F;
+}
+.center-two span {
+  font-size: 16px;
+  padding: 8px 16px;
+  color: #1F1F1F;
+}
+.center-three span {
+  font-size: 16px;
+  padding: 8px 16px;
+  color: #1F1F1F;
+}
+main{
+  height:500px;
+  margin-top: 20px;
+}
+.men-fashion{
+  background-image: url("../public/Men-fashion.avif");
+  background-size: cover;
+}
+.women-fashion{
+  background-image: url("../public/Women-fashion.avif");
+  background-size: cover;
+}
+.kids-fashion{
+  background-image: url("../public/Kids-fashion.avif");
+  background-size: cover;
+}
+
+.footer{
+  background-color: black;
+}
+.footer-top{
+  text-align: center;
+  padding-top: 96px;
+}
+.footer-top input{
+  padding: 17px 30px;
+  background-color: #303030;
+  height: 64px;
+  border: none;
+  margin-top: 25px;
+  width: 461.54px;
+  color: grey;
+}
+.footer-top button{
+  font-size:16px;
+  color: white;
+  background-color: #525252;
+  padding: 17px 32px;
+  border: none;
+  margin-left: 25px;
+}
+.footer-bottom{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 96px;
+  padding-bottom: 48px;
+}
+
+@media screen and (orientation:landscape) {
+  .bi-justify{
+    display:none
+  }
+  main{
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+  }
+}
+
+@media screen and (orientation:portrait) {
+  .two, .three, .four, .center-two, .center-three{
+    display: none;
+  }
+  .first{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .second{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .bi-justify{
+    font-size: 30px;
+  }
+  main{
+    display: grid;
+    grid-template-columns: 12fr;
+  }
+  .men-fashion, .kids-fashion{
+    display: none;
+  }
+  .footer-top input{
+    width:90%;
+  }
+  .footer-top button{
+    margin-top: 20px;
+  }
+  .footer-bottom{
+    display: block;
+  }
+  .bottom-one{
+    display: grid;
+    padding: 0 2% 0 2%;
+    margin: 0 2% 0 2%;
+    grid-template-columns: 6fr 6fr;
+  }
+  .bottom-two{
+    margin-top: 30px;
+    display: grid;
+    padding: 0 2% 0 2%;
+    margin: 0 2% 0 2%;
+    grid-template-columns: 6fr 6fr;
+  }
+}

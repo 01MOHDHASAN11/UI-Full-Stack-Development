@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <script>
+        function bodyload(){
+            document.getElementById("username").innerHTML=location.search.slice(location.search.indexOf("=")+1)
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h1>Hii <span id="username"></span> you are at search page</h1>
+    <a href="Query-string-result.html">Click here to move back to result page</a>
+</body>
+</html>

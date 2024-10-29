@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="container-fluid">
+    <button class="btn btn-info mt-3" data-bs-toggle="modal" data-bs-target="#login">Login</button>
+    <button class="btn btn-warning mt-3" data-bs-target="#offers" data-bs-toggle="modal">Offers</button>
+    <div class="modal fade" id="login">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="bi bi-person-fill">User Login</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <dl>
+                        <dt>User Name</dt>
+                        <dd><input type="text" class="form-control"></dd>
+                        <dt>Email</dt>
+                        <dd><input type="text" class="form-control"></dd>
+                        <dt>Qualification</dt>
+                        <dd><input type="text" class="form-control"></dd>
+                        <dt>Year of passing</dt>
+                        <dd><input type="text" class="form-control"></dd>
+                        <dt>Stream</dt>
+                        <dd><input type="text" class="form-control"></dd>
+                        <dt>Permanent address</dt>
+                        <dd><input type="text" class="form-control"></dd>
+                        <dt>Current address</dt>
+                        <dd><input type="text" class="form-control"></dd>
+                        <dt>Password</dt>
+                        <dd><input type="text" class="form-control"></dd>
+                        <dt>Confirm Password</dt>
+                        <dd><input type="text" class="form-control"></dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning">Login</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="offers">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Festival Sale</h2>
+                    <button  class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    <div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRypX22wBVIJ4KnAydQ4mevHYy43ol1OhKkxw&s" height="150" width="150">
+                        <button class="bi bi-eye btn btn-dark mt-2">View offer</button>
+                    </div>
+                    <div>
+                        <img src="https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/article/Apple-iPhone-16-Pro-hero-geo-240909_inline.jpg.large.jpg"  width="150" height="150">
+                        <button class="bi bi-eye mt-2 btn btn-dark">View offer</button>
+                    </div>
+                    <div>
+                        <img src="https://m.media-amazon.com/images/I/71-0tmfqD0L._AC_UF1000,1000_QL80_.jpg" height="150" width="150">
+                        <button class="bi bi-eye mt-2 btn btn-dark">View offer</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

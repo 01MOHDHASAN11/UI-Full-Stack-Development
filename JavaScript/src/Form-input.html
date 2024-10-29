@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inox</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+        function GetSummary(){
+            document.getElementById("btnbooking").style.display="none";
+            document.getElementById("BookingSummary").style.display="block";
+            document.getElementById("moviename").innerHTML=document.getElementById("movieselect").value;
+            document.getElementById("cinema").innerHTML=document.getElementById("cinemaselect").value;
+            document.getElementById("lblDate").innerHTML=document.getElementById("lstDate").value;
+            document.getElementById("lblTime").innerHTML=document.getElementById("lstTime").value;
+
+            var result=document.getElementById("movieselect").value
+            if(result=="DEVARA (PART-1)"){
+                document.getElementById("imgupload").src="../src/pictures/Devara.png"
+            }
+            else{
+                document.getElementById("imgupload").src="../src/pictures/Joker.png"
+            }
+        }
+        function ModifyClick(){
+            document.getElementById("modifyBooking").innerHTML="Modify Booking";
+            document.getElementById("btnbook").innerHTML="Save"
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <button type="button" class="btn btn-primary mt-2" id="btnbooking" data-bs-target="#examplemodal" data-bs-toggle="modal">Quick Booking</button>
+    <div class="modal fade" id="examplemodal">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title fs-3 text-primary" id="modifyBooking">Quick Booking</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <select class="form-select" id="movieselect">
+                                <option>Select Movie</option>
+                                <option>DEVARA (PART-1)</option>
+                                <option>JOCKER FOLIE A DEUX</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="cinemaselect">
+                                <option>Select Cinema</option>
+                                <option>PVR Ameerpet</option>
+                                <option>Inox B-Hills</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="lstDate">
+                                <option value="">Select Date</option>
+                                <option value="">Today, 3 October</option>
+                                <option value="">Tomorrow, 4 October</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="lstTime">
+                                <option>Select Time</option>
+                                <option>6:00 PM</option>
+                                <option>8:30 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button type="button" onclick="GetSummary()" data-bs-dismiss="modal" id="btnbook" class="btn btn-info">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-3 ms-3 w-25" id="BookingSummary" style="display: none;">
+        <h3 class="text-white text-bg-dark p-2">Booking Summary</h3>
+        <img id="imgupload" height="300" width="100%">
+        <dl class="row">
+            <dt class="col-6">Movie Name:</dt>
+            <dd class="col-6" id="moviename"></dd>
+            <dt class="col-6">Cinema:</dt>
+            <dd class="col-6" id="cinema"></dd>
+            <dt class="col-6">Date:</dt>
+            <dd class="col-6" id="lblDate"></dd>
+            <dt class="col-6">Time:</dt>
+            <dd class="col-6" id="lblTime"></dd>
+        </dl>
+        <button type="button" onclick="ModifyClick()" data-bs-target="#examplemodal" data-bs-toggle="modal" class="btn bg-warning bi bi-pen-fill w-100">Modify Booking</button>
+    </div>
+</body>
+</html>

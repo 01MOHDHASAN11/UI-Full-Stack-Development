@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        "use strict";
+        function bodyload(){
+            document.getElementById("pic").src="../Bootstrap/public/Arjit singh.jfif";
+            document.getElementById("btnregister").value="Register";
+            document.getElementById("btnlogin").value="Login";
+            document.querySelector("#atif").src="../Bootstrap/public/Atif aslam.jfif";
+            document.querySelector(".confirm").value="Confirm";
+            document.querySelector("#delete").value="Delete";
+            document.querySelector("p").innerHTML="Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, odio. Sit dignissimos voluptatum in atque ea! Exercitationem libero cupiditate, animi et possimus consequuntur fuga nihil ex esse ad, ipsa minima.";
+        }
+        function DeleteClick(){
+            alert("Do you really want to delete these items??")
+        }
+        function DeleteConfirm(){
+            var flag=confirm("Confirm if you want to delete total"+ (10)+ "items from cart");
+            if(flag==true){
+                alert("Items deleted successfully");
+            }
+            else{
+                alert("Delete item canceled");
+            }
+        }
+        function totalAmount(){
+            document.write("Total amount for items is "+(10))
+        }
+        function innerText1(){
+            console.log("button clicked")
+            var flag=confirm("Your document will be deleted\nAre you sure??");
+            if(flag==true){
+                document.write("<h2 style='color:red'>Deleted Successfully..</h2><a href='output.html'>Back</a>");
+            }
+            else{
+                document.querySelector("p").textContent="Try again..."
+                document.querySelector("div").innerHTML="Ever try ever fail"
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+
+    <!-- ID Selector -->
+
+    <img id="pic" style="height: 100px; width: 100px;">
+        <form name="frmRegister">
+            <h3>Register</h3>
+            User Name: <input type="text"> Age: <input type="number"> <input type="button" id="btnregister">
+        </form>
+        <form name="frmLogin"">
+            <h3>Login</h3>
+            Mobile: <input type="text"> OPT: <input type="number" size="4"> <input type="button" id="btnlogin">
+        </form>
+
+        <!-- Queryselector -->
+
+        <img style="height: 200px; width: 200px;" id="atif">
+        <input type="button" class="confirm"></input>
+        <input type="button" id="delete"></input>
+        <p style="color: darkorchid; text-align: center; font-size: 24px; font-style: italic;"></p>
+
+        <!-- JavaScript input output technique -->
+        <!-- 1). alert() -->
+
+        <button onclick="DeleteClick()">Delete</button>
+
+        <!-- 2). confirm() -->
+
+        <button onclick="DeleteConfirm()">Confirm</button>
+
+        <!-- 3). document.write() -->
+
+        <button onclick="totalAmount()">Check Amount</button>
+
+        <!-- TextContent/innerText -->
+
+        <button onclick="innerText1()">Inner HTML</button>
+        <p></p>
+        <div id="msg" style="margin-left: 50%; margin-top: 60px;"></div>
+</body> 
+</html>

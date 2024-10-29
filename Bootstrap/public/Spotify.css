@@ -1,0 +1,117 @@
+pointer:hover{
+    cursor:grab;
+}
+
+nav{
+    position: sticky !important;
+    top: 0;
+    z-index: 100;
+}
+
+.input-width{
+    width: 300px;
+}
+.body-left{
+    width: 25%;
+}
+.body-right{
+    width: 75%;
+}
+.header-flex{
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.scroll-bar {
+    overflow: hidden;
+    scrollbar-width: none;
+}
+.scroll-bar:hover{
+    overflow-y: auto;
+}
+
+.eng-btn:hover{
+    transform:scale(1.09);
+    background-color:#000401;
+}
+.eng-sign-up:hover{
+    transform: scale(1.1);
+}
+.spotify-icon{
+    border-radius: 50%;
+    border: none;
+    height: 50px;
+    width: 50px;
+}
+.spotify-icon1{
+    font-size: 30px;
+}
+.spotify-icon:hover{
+    transform: scale(1.4);
+}
+.anchor-one{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 30px;
+}
+.anchor-one:hover{
+    text-decoration: underline;
+}
+.anchor-two{
+    text-decoration: none;
+    font-size: 14px;
+}
+.anchor-two:hover{
+    text-decoration: underline;
+}
+.image img{
+    background-size: contain;
+    height:150px;
+    width: 150px;
+    padding: 3px;
+}
+
+.card{
+    transition: 0.5s ease-in-out;
+}
+.shift i{
+    display: none;
+    position: absolute;
+    bottom: 80px;
+    left: 75px;
+    background-color: #00C000;
+    font-size:30px;
+    border-radius: 50%;
+}
+.card:hover .shift i{
+    display: block;
+    background-color: #00C000;
+}
+.body-right{
+    background-color: #212529;
+}
+.image:hover{
+    transform: scale(1.1);
+}
+.card-title a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 15px;
+}
+.card-title a:hover{
+    text-decoration: underline;
+}
+.card p{
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 15px;
+}
+.popular-artist>div{
+    background-color: #212529;
+}
+.popular-artist>div:hover{
+    background-image: linear-gradient(#212529,#2E3135);
+}

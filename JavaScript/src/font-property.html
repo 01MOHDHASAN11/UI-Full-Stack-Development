@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ApplyEffects(){
+            var h=document.getElementById("rangeH").value
+            var v=document.getElementById("rangeV").value
+            var b=document.getElementById("txtblur").value
+            var c=document.getElementById("txtcolor").value
+            document.querySelector("h1").style.textShadow=`${h}px ${v}px ${b}px ${c}`;
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <h2>Shadow Effect</h2>
+        <dt>Horizontal</dt>
+        <dd><input type="range" id="rangeH" value="5" min="1" max="50"></dd>
+        <dt>Vertical</dt>
+        <dd><input type="range" value="10" id="rangeV" min="1" max="50"></dd>
+        <dt>Blur</dt>
+        <dd><input type="range" id="txtblur" min="1" max="50" value="8"></dd>
+        <dt>Shadow color</dt>
+        <dd><input type="color" id="txtcolor"></dd>
+        <br><br>
+        <button onclick="ApplyEffects()">Apply effects</button>
+        <h1>In this heading tag all effects will be applied here</h1>
+    </dl>
+</body>
+</html>

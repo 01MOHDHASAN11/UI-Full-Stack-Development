@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ApplyEffect(){
+            var size=document.getElementById("fsize").value
+            var color=document.getElementById("fcolor").value
+            var style=document.getElementById("fstyle").value
+            document.getElementById("result").innerHTML="Sample Text".fontsize(size).fontcolor(color)
+            if(style==="bold"){
+                document.getElementById("result").innerHTML="Sample Text".fontsize(size).fontcolor(color).bold()
+            }
+            else if(style==="italic"){
+                document.getElementById("result").innerHTML="Sample Text".fontcolor(color).fontsize(size).italics()
+            }
+        }
+    </script>
+</head>
+<body>
+    <dt>Font Size</dt>
+    <dd><input type="range" value="6" min="1" max="15" id="fsize"></dd>
+    <dt>Font Color</dt>
+    <dd><input type="color" id="fcolor"></dd>
+    <dt>Font Style</dt>
+    <dd>
+        <select id="fstyle">
+            <option>Choose option</option>
+            <option value="bold">Bold</option>
+            <option value="italic">Italics</option>
+        </select>
+    </dd>
+    <button onclick="ApplyEffect()">Apply Effects</button>
+    <p id="result" align="center">Sample Text</p>
+</body>
+</html>

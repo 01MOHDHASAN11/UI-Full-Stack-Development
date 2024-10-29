@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="container-fluid">
+    <div class="btn btn-toolbar bg-dark justify-content-between">
+        <div>
+            <button class="btn bi bi-justify btn-light fs-4" data-bs-toggle="offcanvas" data-bs-target="#menu"></button>
+            <span class="fs-4 ms-2 text-white">Shopper</span>
+        </div>
+        <div>
+            <button class="btn btn-light bi bi-gear-fill" data-bs-target="#setting" data-bs-toggle="offcanvas"></button>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-start" id="menu">
+        <div class="offcanvas-header bg-dark">
+            <h2 class="text-light">Shopper.</h2>
+            <button class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul>
+                <li>Home</li>
+                <li>Electronics</li>
+                <li>Fashion</li>
+                <li>Footwear</li>
+            </ul>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-bottom" id="setting">
+        <div class="offcanvas-header">
+            <button class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex justify-content-around">
+            <button class="btn bi bi-brightness-high fs-3 border-0"></button>
+            <button class="btn bi bi-tv-fill fs-3 border-0"></button>
+            <button class="btn bi bi-bell-fill fs-3 border-0"></button>
+        </div>
+    </div>
+</body>
+</html>

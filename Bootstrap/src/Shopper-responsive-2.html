@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        header {
+            background-color: black;
+            color:white;
+            padding: 10px;
+            font-family: Arial;
+            font-size: 20px;
+        }
+        article {
+            background-color: black;
+            margin-top: 10px;
+            color:white;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            font-family: Arial;
+        }
+        .women-fashion {
+            background-image: url("../public/images/women-fashion.jpg");
+            background-size: cover;
+        }
+        .men-fashion {
+            background-image: url("../public/images/men-fashion.jpg");
+            background-size: cover;
+        }
+        .kids-fashion {
+            background-image: url("../public/images/kids-fashion.jpg");
+            background-size: cover;
+        }
+        main {
+            height: 450px;
+        }
+
+        @media screen and (orientation:landscape) {
+            main {
+                display: grid;
+                grid-template-columns: 4fr 4fr 4fr;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+            }
+            footer {
+            background-color: black;
+            color:white;
+            font-family: Segoe UI;
+            padding: 20px;  
+        }
+        .row-1 {
+            text-align: center;
+        }
+        .footer-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .row-2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .email {
+            display: inline-block;
+            padding: 20px;
+            background-color: #888;
+            color:white;
+            width: 300px;
+            text-align: left;
+        }
+        .subscribe {
+            display: inline-block;
+            padding: 20px;
+            background-color: #444;
+            width: 150px;
+            margin-left: 20px;
+        }
+        .row-3 {
+            display: grid;
+            grid-template-columns: 2.4fr 2.4fr 2.4fr 2.4fr 2.4fr;
+            margin-top: 30px;
+        }
+        .col span {
+            display: block;
+            margin-top: 15px;
+        }
+        .col-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        aside span {
+            padding-right: 10px;
+            padding-top: 20px;
+            display: inline-block;
+        }
+        }
+
+        @media screen and (orientation:portrait) {
+            main {
+                display: grid;
+                grid-template-columns: 12fr;
+                margin-top: 10px;
+            }
+            .kids-fashion {
+                display: none;
+            }
+            .men-fashion {
+                display: none;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+            }
+            nav {
+                display: none;
+            }
+            footer {
+            background-color: black;
+            color:white;
+            font-family: Segoe UI;
+            padding: 20px;  
+        }
+        .row-1 {
+            text-align: center;
+        }
+        .footer-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .row-2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .email {
+            display: inline-block;
+            padding: 20px;
+            background-color: #888;
+            color:white;
+            width: 100px;
+            text-align: left;
+        }
+        .subscribe {
+            display: inline-block;
+            padding: 20px;
+            background-color: #444;
+            width: 80px;
+            margin-left: 20px;
+        }
+        .row-3 {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            margin-top: 30px;
+        }
+        .col span {
+            display: block;
+            margin-top: 15px;
+        }
+        .col-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        aside span {
+            padding-right: 10px;
+            padding-top: 20px;
+            display: inline-block;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand-title">Shopper.</div>
+        <nav>
+            <span>Home</span>
+            <span>Shop</span>
+            <span>Blog</span>
+            <span>Pages</span>
+            <span>Docs</span>
+        </nav>
+        <div>
+            <span class="bi bi-heart"></span>
+            <span class="bi bi-person"></span>
+            <span class="bi bi-cart3"></span>
+        </div>
+    </header>
+    <section>
+        <article> <span class="bi bi-lightning-fill"></span> Happy Holiday Deals <span class="bi bi-lightning-fill"></span> </article>
+        <main>
+            <div class="men-fashion">
+
+            </div>
+            <div class="women-fashion">
+
+            </div>
+            <div class="kids-fashion">
+
+            </div>
+        </main>
+    </section>
+    <footer>
+        <div class="row-1">
+            <span class="footer-title">Want style Ideas and Treats?</span>
+        </div>
+        <div class="row-2">
+            <span class="email">Enter Email*</span>
+            <span class="subscribe"> Subscribe </span>
+        </div>
+        <div class="row-3">
+            <div>
+                <span class="brand-title">Shopper</span>
+                <aside>
+                    <span class="bi bi-facebook"></span>
+                    <span class="bi bi-twitter"></span>
+                    <span class="bi bi-instagram"></span>
+                    <span class="bi bi-youtube"></span>
+                    <span class="bi bi-linkedin"></span>
+                </aside>
+            </div>
+            <div class="col">
+                <span class="col-title">Support</span>
+                <span>Contact Us</span>
+                <span>FAQs</span>
+                <span>Size Guide</span>
+                <span>Shipping & Returns</span>
+            </div>
+            <div class="col">
+                <span class="col-title">Shop</span>
+                <span>Men's Shopping</span>
+                <span>Women's Shopping</span>
+                <span>Kids' Shopping</span>
+                <span>Discounts</span>
+            </div>
+            <div class="col">
+                <span class="col-title">Company</span>
+                <span>Our Story</span>
+                <span>Careers</span>
+                <span>Terms & Conditions</span>
+                <span>Privacy & Cookie policy</span>
+            </div>
+            <div>
+                <address class="col">
+                    <span class="col-title">Contact</span>
+                    <span>1-202-555-0105</span>
+                    <span>1-202-555-0106</span>
+                    <span>help@shopper.com</span>
+                </address>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

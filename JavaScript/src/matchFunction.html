@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var tip=""
+        var pattern=/ /
+        function CountrySelect(){
+            var country=document.getElementById("flagOption").value
+            if(country=="India"){
+                 tip="eg: +91 and XXXXXXXXXX"
+                document.getElementById("FlagImg").src="./pictures/IndianFlag.png"
+                pattern= /^\+91[789]\d{9}$/
+            }
+            else if(country=="USA"){
+                document.getElementById("FlagImg").src="./pictures/USAFlag.webp"
+                 tip="eg: +1-XXX-XXX-XXXX"
+                 pattern=/^\+1-\d{3}-\d{3}-\d{4}$/
+            }
+            else if(country=="UK"){
+                document.getElementById("FlagImg").src="./pictures/UKflag.png"
+                 tip="eg: +44-XXX-XXX-XXXX"
+                 pattern=/^\+44-\d{3}-\d{3}-\d{4}$/
+            }
+             verify=document.getElementById("MobileFormat").placeholder=tip
+            
+        }
+        function VerifyNumber(){
+            var mobileNumber=document.getElementById("MobileFormat").value
+            console.log(mobileNumber)
+            if(mobileNumber.match(pattern)){
+                console.log("Condition true")
+                document.write("<h2>Mobile number verification successful<h2>")
+            }
+            else{
+                console.log("Condition false")
+                document.getElementById("txtError").innerHTML="Mobile verification unsuccessful"
+            }
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl class="mt-4 w-25">
+        <dt>Select Country</dt>
+        <dd class="input-group my-2">
+            <select id="flagOption" onchange="CountrySelect()" class=" form-select">
+                <option>Select your country</option>
+                <option>India</option>
+                <option>USA</option>
+                <option>UK</option>
+            </select>
+            <img id="FlagImg" class="input-group-text w-25">
+        </dd>
+        <dt class="my-2">Mobile Number</dt>
+        <dd><input type="text" class="form-control" id="MobileFormat"></dd>
+        <dd class="text-danger" id="txtError"></dd>
+        <dd><button class="btn btn-warning w-100" onclick="VerifyNumber()">Submit</button></dd>
+    </dl>
+</body>
+</html>

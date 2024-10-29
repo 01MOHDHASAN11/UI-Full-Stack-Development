@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Tabls</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="container-fluid">
+    <h3>Mobiles</h3>
+    <nav>
+        <div class="nav nav-tabs">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#basic">Basic Details</button>
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#preview">Preview</button>
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#offers">Offers</button>
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rating">Ratings</button>
+        </div>
+    </nav>
+    <div class="tab tab-content m-2">
+        <div class="tab-pane active mt-4" id="basic">
+            <h3>iPhone 14 Black (128 GB)</h3>
+            <h5 class="bi bi-currency-rupee">69,000</h5>
+        </div>
+        <div class="tab-pane mt-4" id="preview">
+            <img src="../public/Carousel_1.png" class="d-block w-100 my-2" height="300">
+            <img src="../public/Carousel_2.png" class="d-block w-100 my-2" height="300">
+            <img src="../public/Carousel_3.png" class="d-block w-100 my-2" height="300">
+        </div>
+        <div class="tab-pane mt-4" id="offers">
+            <ul>
+                <li>Bank Offer5% Unlimited Cashback on Flipkart Axis Bank Credit CardT&C </li>
+                <li>Special PriceGet extra ₹4901 off (price inclusive of cashback/coupon)T&C</li>
+                <li>Partner OfferMake a purchase and enjoy a surprise cashback/ coupon that you can redeem later!</li>
+            </ul>
+        </div>
+        <div class="tab-pane mt-4" id="rating">
+            <span>4.5<span class="bi bi-star-fill">4500 ratings & 600 reviews</span></span>
+        </div>
+    </div>
+</html>

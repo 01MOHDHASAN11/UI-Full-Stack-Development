@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="container-fluid">
+   <h1 class="text-center">Frequently Asked Questions</h1>
+   <div class="accordion" id="faq">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button" data-bs-target="#q1" data-bs-toggle="collapse">Accordion Item 1</button>
+            </div>
+        </div>
+        <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faq">
+            <div class="accordion-body">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet sequi voluptatum inventore libero aperiam doloribus deserunt, delectus eum, natus facere consectetur unde laudantium sint officiis perspiciatis vitae impedit expedita est.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button" data-bs-target="#q2" data-bs-toggle="collapse">Accordion Item 2</button>
+            </div>
+        </div>
+        <div id="q2" class="accordion-collapse collapse fade" data-bs-parent="#faq">
+            <div class="accordion-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aliquam odio? Aut distinctio, repudiandae aliquid excepturi temporibus ullam, adipisci, laboriosam dolorum asperiores ipsum sint! Quo consectetur tenetur possimus est.</p>
+            </div>
+        </div>
+   </div>
+</body>
+</html>

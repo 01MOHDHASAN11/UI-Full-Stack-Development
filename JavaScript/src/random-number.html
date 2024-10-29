@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramdom Number</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script>
+      function randomNumber(){
+        var num=Math.round(Math.random()*10)+" "+Math.round(Math.random()*10)+" "+Math.round(Math.random()*10)+" "+Math.round(Math.random()*10)+" "+Math.round(Math.random()*10)+" "+Math.round(Math.random()*10)
+        document.getElementById("getOTP").innerHTML=num;
+      }
+      function bodyload(){
+        randomNumber()
+      }
+
+
+    </script>
+  </head>
+  <body onload="bodyload()" class="container-fluid">
+    <dl>
+        <h3 class="bi bi-person-fill">User Login</h3>
+        <dt>User Name</dt>
+        <dd><input type="text" name="" id=""></dd>
+        <dt>Password</dt>
+        <dd><input type="text"></dd>
+        <dt>Verify Code <button onclick="randomNumber()" class="btn bi bi-arrow-clockwise"></button></dt>
+        <dd id="getOTP"></dd>
+        <dd><input type="text"></dd>
+        <button type="button">Login</button>
+    </dl>
+  </body>
+</html>

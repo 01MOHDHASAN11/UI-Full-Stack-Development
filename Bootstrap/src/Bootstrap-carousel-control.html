@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel control</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="container-fluid">
+    <div class="carousel slide" data-bs-ride="carousel" id="banners">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../public/Carousel_1.png" class="w-100 d-block" height="300">
+            </div>
+            <div class="carousel-item">
+                <img src="../public/Carousel_2.png" class="w-100 d-block" height="300">
+            </div>
+            <div class="carousel-item">
+                <img src="../public/Carousel_3.png" class="w-100 d-block" height="300">
+            </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#banners">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#banners">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</body>
+</html>

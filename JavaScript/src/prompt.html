@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt</title>
+    <script>
+        function btnclick(){
+            let result=prompt("Enter folder name")
+            if(result==null){
+                alert("You clicked cancel")
+            }
+            else if(result==""){
+                alert("You entered nothing")
+            }
+            else{
+                document.getElementById("addfolder").innerHTML+="Folder Name: "+result+"<br><br>"
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Google Drive</h3><br><br>
+    <button onclick="btnclick()">Add Folder</button>
+    <div id="addfolder"></div>
+</body>
+</html>

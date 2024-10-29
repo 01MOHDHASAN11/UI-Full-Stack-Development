@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../public/Spotify.css" />
+  </head>
+  <body class="container-fluid bg-black">
+    <nav class="navbar bg-black d-flex justify-content-between">
+      <div class="p-2">
+        <button class="spotify-icon">
+          <i id="icon" class="spotify-icon1 bi bi-spotify"></i>
+        </button>
+      </div>
+      <div class="d-flex p-2">
+        <span style="margin-left: 90px"
+          ><i
+            class="bi bi-house-door-fill me-4 bg bg-dark text-white rounded-circle fs-3 p-2"
+          ></i
+        ></span>
+        <div
+          class="input-group rounded-pill border border-0"
+          style="width: 400px"
+        >
+          <span class="input-group-text bg-dark border-0 rounded-start-pill"
+            ><i class="bi bi-search text-light border-0"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control bg-dark border-0 input-width"
+          />
+          <span class="input-group-text bg-dark border-0 rounded-end-circle"
+            ><i class="bi bi-browser-edge text-light border-0"></i
+          ></span>
+        </div>
+      </div>
+      <div class="p-2">
+        <button
+          class="eng-sign-up btn fs-5 fw-medium text-secondary text-decoration-none border border-0"
+        >
+          Sign up
+        </button>
+        <button
+          class="btn btn-light rounded rounded-end-pill rounded-start-pill fw-medium fs-5 me-3 ms-3"
+        >
+          Login
+        </button>
+      </div>
+    </nav>
+    <div class="body-partition d-flex">
+      <div class="body-left bg-dark rounded">
+        <div class="header d-flex justify-content-between p-2">
+          <div class="header-left dropup">
+            <p
+              class="text-white-50 fs-4 fw-medium mt-2 ms-3"
+              data-bs-toggle="dropdown"
+            >
+              Your Library
+            </p>
+            <span class="dropdown-menu bg-dark mb-2" style="height: 30px">
+              <a
+                href="#"
+                class="dropdown-item align-content-center text-decoration-none text-light fw-medium"
+                >Collapse your library</a
+              >
+            </span>
+          </div>
+          <div class="header-right dropup">
+            <p
+              class="text-white-50 mt-1 me-3 fs-3 dropup"
+              data-bs-toggle="dropdown"
+            >
+              +
+            </p>
+            <span class="dropdown-menu bg-dark mb-2" height="30px"
+              ><a
+                href="#"
+                class="dropdown-item align-content-center text-decoration-none text-light fw-medium"
+                >Create playlist or folder</a
+              ></span
+            >
+          </div>
+        </div>
+        <div class="scroll-bar h-25">
+          <div class="scroll-one rounded p-2" style="background-color: #111111">
+            <p class="text-light fs-6 fw-bolder ps-3">
+              Create your first playlist
+            </p>
+            <p class="text-light fw-normal ms-3">It's easy we'll help you</p>
+            <button class="btn btn-light rounded-pill ms-3 mb-3">
+              Create playlist
+            </button>
+          </div>
+          <div
+            class="scroll-two mt-2 rounded mb-3 p-2"
+            style="background-color: #111111"
+          >
+            <p class="text-light fs-6 fw-bolder ps-3">
+              Let's find some podcasts to follow
+            </p>
+            <p class="text-light fw-normal ms-3">
+              We'll keep you updated on new episodes
+            </p>
+            <button class="btn btn-light rounded-pill ms-3 mb-3">
+              Browse podcasts
+            </button>
+          </div>
+          <div
+            class="scroll-three mt-2 rounded mb-3 p-2"
+            style="background-color: #111111"
+          >
+            <p class="text-light fs-6 fw-bolder ps-3">
+              Let's find some podcasts to follow
+            </p>
+            <p class="text-light fw-normal ms-3">
+              We'll keep you updated on new episodes
+            </p>
+            <button class="btn btn-light rounded-pill ms-3 mb-3">
+              Browse podcasts
+            </button>
+          </div>
+        </div>
+        <footer class="d-flex text-white-50 mt-5 ps-4">
+          <div class="p-2" style="font-size: 12px">
+            <p>Legal</p>
+            <p>Cookies</p>
+            <p class="text-white fw-medium">Cookies</p>
+          </div>
+          <div class="p-2" style="font-size: 12px">
+            <p>Safety center</p>
+            <p>About Ads</p>
+          </div>
+          <div class="p-2" style="font-size: 12px">
+            <p>Privacy policy</p>
+            <p>Accessibility</p>
+          </div>
+        </footer>
+        <footer>
+          <button
+            class="pointer eng-btn btn btn-dark text-white rounded-pill ms-4 text-decoration-none"
+            style="font-size: 14px; border: 1px solid white; font-weight: bold"
+          >
+            <i class="bi bi-globe me-1"></i>English
+          </button>
+        </footer>
+      </div>
+      <div class="body-right rounded ms-2">
+        <div class="header-flex d-flex justify-content-between align-items-end">
+          <a href="#" class="anchor-one fw-bolder">Popular artists</a>
+          <a href="#" class="anchor-two text-white fw-bolder">Show all</a>
+        </div>
+        <div class="popular-artist d-flex mt-4">
+          <div class="card ms-2 image border-0">
+            <img
+              src="../public/pritam.jfif"
+              class="card-img-top rounded-circle"
+            />
+            <span class="shift"
+              ><i class="bi btn btn-lg bi-play-fill"></i
+            ></span>
+            <div class="card-title">
+              <a href="#" class="text-light">Pritam</a>
+            </div>
+            <p class="card-text text-white-50">Artist</p>
+          </div>
+          <div class="card ms-2 image border-0">
+            <img
+              src="../public/AR Rahman.jfif"
+              class="card-img-top rounded-circle"
+            />
+            <span class="shift"
+              ><i class="bi btn btn-lg bi-play-fill"></i
+            ></span>
+            <div class="card-title">
+              <a href="#" class="text-light">A.R. Rahman</a>
+            </div>
+            <p class="card-text text-white-50">Artist</p>
+          </div>
+          <div class="card ms-2 image border-0">
+            <img
+              src="../public/Sachin-jighar.jfif"
+              class="card-img-top rounded-circle"
+            />
+            <span class="shift"
+              ><i class="bi btn btn-lg bi-play-fill"></i
+            ></span>
+            <div class="card-title">
+              <a href="#" class="text-light">Sachin-Jigar</a>
+            </div>
+            <p class="card-text text-white-50">Artist</p>
+          </div>
+          <div class="card ms-2 image border-0">
+            <img
+              src="../public/Arjit singh.jfif"
+              class="card-img-top rounded-circle"
+            />
+            <span class="shift"
+              ><i class="bi btn btn-lg bi-play-fill"></i
+            ></span>
+            <div class="card-title">
+              <a href="#" class="text-light">Arjit Singh</a>
+            </div>
+            <p class="card-text text-white-50">Artist</p>
+          </div>
+          <div class="card ms-2 image border-0">
+            <img
+              src="../public/Anirudh.jfif"
+              class="card-img-top rounded-circle"
+            />
+            <span class="shift"
+              ><i class="bi btn btn-lg bi-play-fill"></i
+            ></span>
+            <div class="card-title">
+              <a href="#" class="text-light"
+                >Anirudh<br />
+                &nbsp;&nbsp; Ravichander</a
+              >
+            </div>
+            <p class="card-text text-white-50">Artist</p>
+          </div>
+          <div class="card ms-2 image border-0">
+            <img
+              src="../public/Atif aslam.jfif"
+              class="card-img-top rounded-circle"
+            />
+            <span class="shift"
+              ><i class="bi btn btn-lg bi-play-fill"></i
+            ></span>
+            <div class="card-title">
+              <a href="#" class="text-light">Atif Aslam</a>
+            </div>
+            <p class="card-text text-white-50">Artist</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

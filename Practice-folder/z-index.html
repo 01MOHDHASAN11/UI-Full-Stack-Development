@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z Index</title>
+    <style>
+        .red{
+            background-image: url("../Bootstrap/public/img.jpg");
+            background-size: cover;
+            width: 300px;
+            height: 100px;
+            z-index: 1;
+            top:50px;
+            left: 50px;
+        }
+        
+        .green{
+            background-image: url("../Bootstrap/public/pexels-adria-masi-461420600-27501815.jpg");
+            background-size: 100% 100%;
+            width: 300px;
+            height: 100px;
+            z-index: 0;
+            }
+        .yellow{
+            background-image: url("../Bootstrap/public/Spotify_screenshot.png");
+            background-size: 100% 100%;
+            width: 300px;
+            height: 100px;
+            top:100px;
+            left: 100px;
+            z-index:2;
+        }
+
+        div {
+         border:2px solid black;
+         border-radius: 20px;
+         position: absolute;
+         transition: 2s;
+       }
+       div:hover {
+         position: absolute;
+         top: 200px;
+         left: 500px;
+         transition: 5s;
+         width: 500px;
+         height: 300px;
+         border-radius: 50%;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="yellow"></div>
+</body>
+</html>
