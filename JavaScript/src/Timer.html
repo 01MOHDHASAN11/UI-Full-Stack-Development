@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function skipEvent(){
+            clearTimeout(s4)
+        }
+
+        function step1(){
+            document.getElementById("increment").innerHTML="20% completed"
+        }
+        function step2(){
+            document.getElementById("increment").innerHTML="40% completed"
+        }
+        function step3(){
+            document.getElementById("increment").innerHTML="60% completed"
+        }
+        function step4(){
+            document.getElementById("increment").innerHTML="80% completed"
+        }
+        function step5(){
+            document.getElementById("increment").innerHTML="100% completed"
+        }
+
+
+        function normalFlow(){
+            setTimeout(step1,2000)
+            setTimeout(step2,4000)
+            setTimeout(step3,6000)
+            s4=setTimeout(step4,8000)
+            setTimeout(step5,10000)
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="m-3">
+        Volume <button onclick="normalFlow()" class="btn bi bi-chevron-compact-up btn-success"></button>
+    </div>
+    <div>
+        <button onclick="skipEvent()" class="btn btn-danger">Cancel 70% event</button>
+    </div>
+    <div>
+        <p id="increment" class="text-center"></p>
+    </div>
+</body>
+</html>
