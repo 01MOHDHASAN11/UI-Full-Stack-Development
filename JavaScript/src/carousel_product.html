@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <title>Document</title>
+    <style>
+        /* CSS for slide animation */
+        @keyframes slideLeft {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideRight {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .slide-left {
+            animation: slideLeft 0.5s ease-in-out;
+        }
+
+        .slide-right {
+            animation: slideRight 0.5s ease-in-out;
+        }
+    </style>
+    <script>
+        var count = 1;
+        var thread;
+
+        function LoadProduct(id) {
+            fetch(`https://fakestoreapi.com/products/${id}`)
+                .then(response => response.json())
+                .then(product => {
+                    const imgElement = document.querySelector("img");
+                    imgElement.src = product.image;
+                    document.getElementById("lblTitle").innerHTML = product.title;
+                    document.getElementById("lblPrice").innerHTML = "$" + product.price;
+                    document.getElementById("lblRange").value = count;
+                });
+        }
+
+        function NextClick() {
+            if (count >= 20) {
+                count = 1;
+            } else {
+                count += 1;
+            }
+            applySlideEffect("left");
+            LoadProduct(count);
+        }
+
+        function PrevClick() {
+            if (count <= 1) {
+                count = 20;
+            } else {
+                count -= 1;
+            }
+            applySlideEffect("right");
+            LoadProduct(count);
+        }
+
+        function applySlideEffect(direction) {
+            const imgElement = document.querySelector("img");
+            imgElement.classList.remove("slide-left", "slide-right");
+            
+            // Trigger reflow to restart animation
+            void imgElement.offsetWidth;
+            
+            if (direction === "left") {
+                imgElement.classList.add("slide-left");
+            } else if (direction === "right") {
+                imgElement.classList.add("slide-right");
+            }
+        }
+
+        function statusPlay() {
+            var text = "<h3>Status: Slide Running</h3>";
+            document.getElementById("lblStatus").innerHTML = text.split(" ").join("&nbsp;&nbsp;");
+        }
+
+        function statusPause() {
+            var text = "<h3>Status: Slide Paused</h3>";
+            document.getElementById("lblStatus").innerHTML = text.split(" ").join("&nbsp;&nbsp;");
+        }
+
+        function btnPlay() {
+            statusPlay();
+            thread = setInterval(NextClick, 2000);
+        }
+
+        function btnPause() {
+            statusPause();
+            clearInterval(thread);
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center" onload="LoadProduct(1)">
+    <div class="card w-50 mt-3 p-2 overflow-hidden">
+        <div class="card-header text-center">
+            <div id="lblTitle"></div>
+            <div id="lblStatus"></div>
+        </div>
+        <div class="card-body row">
+            <div class="col-1 d-flex flex-column justify-content-center align-items-center">
+                <button class="btn btn-dark bi bi-chevron-left" onclick="PrevClick()"></button>
+            </div>
+            <div class="col-10 position-relative">
+                <img width="100%" height="350">
+                <button class="btn btn-danger position-absolute badge fs-5 top-0 end-0 p-2 rounded rounded-circle" id="lblPrice"></button>
+                <div>
+                    <input type="range" min="1" max="20" value="1" class="form-range w-100 my-2" id="lblRange">
+                </div>
+            </div>
+            <div class="col-1 d-flex flex-column justify-content-center align-items-center">
+                <button class="btn btn-dark bi bi-chevron-right" onclick="NextClick()"></button>
+            </div>
+        </div>
+        <div class="card-footer d-flex justify-content-center">
+            <div>
+                <button class="btn btn-success bi bi-play-fill mx-2" onclick="btnPlay()"></button>
+            </div>
+            <div>
+                <button class="btn btn-danger bi bi-pause-fill" onclick="btnPause()"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
