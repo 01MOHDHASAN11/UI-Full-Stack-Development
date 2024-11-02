@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <title>Progress</title>
+
+    <style>
+        @keyframes Fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        img {
+            animation-name: Fade;
+            animation-duration: 10s;
+        }
+    </style>
+    <script>
+        var thread;
+        var count = 0;
+
+        function LoadClick() {
+            console.log("LoadClick triggered"); // Debugging line
+            document.getElementById("btnContainer").style.display = "none";
+            document.getElementById("progressBar").style.display = "block";
+            document.getElementById("btnControl").style.display = "block";
+            
+            count = 0; 
+            document.querySelector("progress").value = count;
+            document.getElementById("lblCount").innerHTML = `${count}% completed`;
+            
+            thread = setInterval(curProgress, 50);
+        }
+
+        function pauseClick() {
+            clearInterval(thread);
+        }
+
+        function playClick() {
+            thread = setInterval(curProgress, 100);
+        }
+
+        function curProgress() {
+            if (count >= 100) {
+                clearInterval(thread);
+                document.getElementById("progressBar").style.display = "none";
+                document.getElementById("displayImg").style.display = "block";
+                document.getElementById("lblCount").style.display = "none";
+                document.getElementById("btnControl").style.display = "none";
+                return;
+            }
+            count++;
+            document.querySelector("progress").value = count;
+            document.getElementById("lblCount").innerHTML = `${count}% completed`;
+        }
+    </script>
+</head>
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div align="center">
+        <!-- Progress bar container, initially hidden -->
+        <div id="progressBar" style="display: none;">
+            <progress min="0" max="100" style="height: 20px; width: 500px;"></progress>
+        </div>
+        <div id="btnContainer">
+            <button class="btn btn-info" onclick="LoadClick()">Load Image</button>
+        </div>
+        <div id="btnControl" style="display: none;" class="my-2">
+            <button class="btn btn-warning" onclick="pauseClick()">Pause</button>
+            <button class="btn btn-success" onclick="playClick()">Play</button>
+        </div>
+        
+        <!-- Label for showing progress percentage -->
+        <div class="my-2">
+            <label id="lblCount"></label>
+        </div>
+        
+        <!-- Display Image -->
+        <div id="displayImg" style="display: none;">
+            <img src="/Bootstrap/public/Women-fashion.avif" alt="" style="height: 400px; width: 300px;">
+        </div>
+    </div>
+</body>
+</html>
