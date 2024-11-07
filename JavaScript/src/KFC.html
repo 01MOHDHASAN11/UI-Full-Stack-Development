@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <title>KFC Menu</title>
+    <style>
+        .accordion, .accordion-item, .accordion-body {
+            border: none !important;
+        }
+    </style>
+    <script>
+        var totalPrice=0,totalMeal,starter,totalMealOne=0,totalMealTwo=0,totalAddOnOne=0,totalAddOnTwo=0
+        var customerName="", customerMobile=""
+        function customerData(){
+            customerName = document.getElementById("customerName").value;
+            customerMobile = document.getElementById("customerMobile").value;
+        }
+        function addMealItemOne(){
+            totalMeal=0
+            var mealOne=document.getElementById("mealCheckOne")
+            console.log(mealOne.value,"mealOne")
+            
+            if(mealOne.checked){
+                totalMeal+=parseInt(mealOne.value)
+            }
+            
+            totalMealOne+=totalMeal
+        }
+
+        function addMealItemTwo(){
+            totalMeal=0
+            var mealTwo=document.getElementById("mealCheckTwo")
+            console.log(mealTwo.value,"mealTwo")
+            if(mealTwo.checked){
+                totalMeal+=parseInt(mealTwo.value)
+            }
+            totalMealTwo+=totalMeal
+        }
+        
+
+        function addOns1(){
+            starter=0
+            let extraPriceOne=document.getElementById("addOnFirst")
+            if(extraPriceOne.checked){
+                starter+=parseInt(extraPriceOne.value)
+            }
+            totalAddOnOne+=starter
+        }
+
+        function addOns2(){
+            starter=0
+            let extraPriceTwo=document.getElementById("addOnSecond")
+            console.log(extraPriceTwo.value)
+            if(extraPriceTwo.checked){
+                starter+=parseInt(extraPriceTwo.value)
+            }
+            totalAddOnTwo+=starter
+        }
+
+        function customerDetails(){
+            totalPrice+=totalMealOne+totalMealTwo+totalAddOnOne+totalAddOnTwo
+            document.getElementById("lblName").innerHTML=customerName
+            document.getElementById("lblMobile").innerHTML=customerMobile
+            if(totalMealOne==0 && totalMealTwo!=0){
+                document.getElementById("lblMeals").innerHTML=`Your order for chicken popcorn is Rupees 100`
+            }
+            else if(totalMealOne!=0 && totalMealTwo==0){
+                document.getElementById("lblMeals").innerHTML=`Your order for chicken burger is Rupees 120`
+            }
+            else if(totalMealOne!=0 && totalMealTwo!=0){
+                document.getElementById("lblMeals").innerHTML="Your order for chicken burger costs Rupees 120 and for chicken popcorn is Rupees 100 so total meal cost is Rupees 220"
+            }
+            else{
+                document.getElementById("lblMeals").innerHTML="Not added meal"
+            }
+            if(totalAddOnOne!=0 && totalAddOnTwo==0){
+                document.getElementById("lblAddOn").innerHTML=`Your order for chicken roll is Rupees 120`
+            }
+            else if(totalAddOnOne==0 && totalAddOnTwo!=0){
+                document.getElementById("lblAddOn").innerHTML=`Your order for small chicken popcorn is Rupees 100`
+            }
+            else if(totalAddOnOne!=0 && totalAddOnTwo!=0){
+                document.getElementById("lblAddOn").innerHTML="Your order for chicken roll costs Rupees 120 and for small chicken popcorn is Rupees 100 so total meal cost is Rupees 220"
+            }
+            else{
+                document.getElementById("lblAddOn").innerHTML="Not added addOn"
+            }
+            document.getElementById("lblTotal").innerHTML=totalPrice
+        }
+
+    </script>
+</head>
+<body class="container-fluid">
+    <header>
+        <img src="./pictures/KFC-Screenshot.png" style="height:300px; width: 100vw; padding: 4px;">
+    </header>
+    <div id="parentAccordion">
+        <div class="accordion" id="customerDetail">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="btn btn-danger w-100" data-bs-toggle="collapse" data-bs-target="#collapseOne">Customer Details</button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#parentAccordion">
+                    <div class="accordion-body bg-danger mt-2">
+                        <div>
+                            <span style="color: white; font-weight: 700;">Customer Name</span>
+                            <input type="text" class="form-control" id="customerName" onkeyup="customerData()">
+                        </div>
+                        <div>
+                            <span style="color: white; font-weight: 700;">Mobile</span>
+                            <input type="text" class="form-control" id="customerMobile" onkeyup="customerData()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="accordion" id="selectMeal">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="btn btn-danger w-100" data-bs-toggle="collapse" data-bs-target="#collapseTwo">Select Your Meal</button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#parentAccordion">
+                    <div class="accordion-body bg-danger mt-2" style="display: flex; justify-content: space-between;">
+                        <div style="margin-left: 25%;">
+                            <img src="./pictures/Burger.jpg" height="200px" width="300px" style="object-fit: contain;">
+                            <div class="mt-3" style="margin-left: 10px;">
+                                <input type="radio" value="120" class="form-check-input" id="mealCheckOne" onchange="addMealItemOne()"><span style="margin-left: 8px; color: white; font-weight: 600;" id="lblMealOne">&#8377;120/-</span>
+                            </div>
+                        </div>
+                        <div style="margin-right: 25%;">
+                            <img src="./pictures/Chicken_Bucket.jpg" height="200px" width="300px" style="object-fit: contain;">
+                            <div class="mt-3" style="margin-left: 10px;">
+                                <input type="radio" value="100" class="form-check-input" id="mealCheckTwo" onchange="addMealItemTwo()"><span style="margin-left: 8px; color: white; font-weight: 600;" id="lblMealTwo">&#8377;100/-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="accordion" id="selectExtra">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="btn btn-danger w-100" data-bs-toggle="collapse" data-bs-target="#collapseThree">Select AD-ON'S</button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#parentAccordion">
+                    <div class="accordion-body bg-danger mt-2" style="display: flex; justify-content: space-between;">
+                        <div style="margin-left: 25%;">
+                            <img src="./pictures/chicken-roll.jpg" height="200px" width="300px" style="object-fit: contain;">
+                            <div class="mt-3" style="margin-left: 10px;">
+                                <input type="checkbox" value="120" class="form-check-input" onchange="addOns1()" id="addOnFirst"><span id="lblAddOn1" style="margin-left: 8px; color: white; font-weight: 600;">&#8377;120/-</span>
+                            </div>
+                        </div>
+                        <div style="margin-right: 25%;">
+                            <img src="./pictures/chicken-popcorn.jpg" height="200px" width="300px" style="object-fit: contain;">
+                            <div class="mt-3" style="margin-left: 10px;">
+                                <input type="checkbox" value="100" class="form-check-input" onchange="addOns2()" id="addOnSecond"><span style="margin-left: 8px; color: white; font-weight: 600;" id="lblAddOn2">&#8377;100/-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-danger w-100 mt-2" data-bs-toggle="modal" data-bs-target="#summaryProducts" onclick="customerDetails()">Place Order</button>
+            <div class="modal fade" id="summaryProducts">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title">Your bill summary</h1>
+                            <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <dl>
+                                <dt>Customer Name</dt>
+                                <dd id="lblName"></dd>
+                                <dt>Mobile</dt>
+                                <dd id="lblMobile"></dd>
+                                <dt>Meal</dt>
+                                <dd id="lblMeals"></dd>
+                                <dt>Add On's</dt>
+                                <dd id="lblAddOn"></dd>
+                                <dt>Total</dt>
+                                <dd id="lblTotal"></dd>
+                            </dl>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-info" data-bs-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
