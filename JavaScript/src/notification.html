@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <title>Notification</title>
+    <script>
+        var time=0;
+        function lblInput(){
+            const input=document.getElementById("lblNumber").value
+            time=parseInt(input,10)
+            if(isNaN(time) || time<=0){
+                time=0
+            }
+        }
+
+        function msgNotify(){
+            document.getElementById("btnConfirm").style.display="none"
+            document.getElementById("lblNumber").style.display="none"
+            document.getElementById("loadingIcon").style.display="block"
+            if(time>0){
+                setTimeout(()=>{
+                    alert(`Your notification after ${time} seconds`);
+                    resetDefault()
+                },time*1000)
+            }
+            else if(document.getElementById("lblNumber").value==""){
+                alert("Please input a number")
+                resetDefault()
+            }
+            else{
+                alert("Please enter a valid time greater than zero")
+                resetDefault()
+            }
+        }
+        function resetDefault(){
+            document.getElementById("btnConfirm").style.display="block"
+            document.getElementById("lblNumber").style.display="block"
+            document.getElementById("lblNumber").value=""
+            document.getElementById("loadingIcon").style.display="none"
+        }
+    </script>
+</head>
+<body class="container-fluid bg-dark">
+    <div class="d-flex flex-column justify-content-center align-items-center vh-100">
+        <input type="text" class="form-control" style="width: 400px; padding: 15px;" id="lblNumber" onkeyup="lblInput()" placeholder="Enter the time in seconds for the notification">
+        <button class="btn btn-warning w-25 my-3 fs-3 p-2" id="btnConfirm" onclick="msgNotify()">Confirm</button>
+        <div class="spinner-border text-danger" id="loadingIcon" style="width: 5rem; height: 5rem; display: none;" role="status"></div>
+    </div>
+</body>
+</html>
