@@ -1,0 +1,2 @@
+Hello,
+This file is created to perform "fs" module operation to manipulate this file.

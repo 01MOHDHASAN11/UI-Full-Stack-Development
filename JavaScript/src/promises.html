@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var Fetchdata = new Promise(function(resolve, reject){
+          var url = prompt("Enter URL");
+          if(url==="https://fakestore") {
+              resolve([{Name:"TV", Price:45000}, {Name:"Mobile", Price:13300}]);
+          } else {
+              reject("Invalid : 404 Not Found");
+          }
+    });
+    var now = new Date();
+    Fetchdata
+       .then(function(response){
+           console.log(response);
+           console.log(`${now.toLocaleTimeString()}`)
+       })
+       .then(function(){
+        console.log(`Your Request Processed Successfully.. ${now.toLocaleTimeString()}`);
+       })
+       .then(function(){
+           console.log(`Response Rendered in JSON format ${now.toLocaleTimeString()}`);
+       })
+       .catch(function(error){
+            console.log(error);
+       })
+       .finally(function(){
+          console.log("Program End");
+       })
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
