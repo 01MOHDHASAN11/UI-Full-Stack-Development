@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class Person {
+        constructor(name, age) {
+          this._name = name; // Private variable (conventionally uses `_`)
+          this._age = age; // Private variable
+        }
+
+        // Getter for name
+        get name() {
+          return this._name;
+        }
+
+        // Setter for name
+        set name(newName) {
+          if (newName.length > 0) {
+            this._name = newName;
+          } else {
+            console.log("Name cannot be empty.");
+          }
+        }
+
+        // Getter for age
+        get age() {
+          return this._age;
+        }
+
+        // Setter for age
+        set age(newAge) {
+          if (newAge >= 0) {
+            this._age = newAge;
+          } else {
+            console.log("Age must be a non-negative number.");
+          }
+        }
+      }
+
+      // Usage
+      let person = new Person("Alice", 25);
+
+      // Using getter
+      console.log(person.name); // Output: Alice
+      console.log(person.age); // Output: 25
+
+      // Using setter
+      person.name = "Bob";
+      console.log(person.name); // Output: Bob
+
+      person.age = 30;
+      console.log(person.age); // Output: 30
+
+      // Example of validation
+      person.age = -5; // Output: Age must be a non-negative number.
+    </script>
+  </head>
+  <body></body>
+</html>
