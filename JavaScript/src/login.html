@@ -1,0 +1,79 @@
+<!-- Query String -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form method="get" action="./home.html">
+        <h3>User Login</h3>
+        <input type="text" name="UserName">
+        <button>Login</button>
+    </form>
+</body>
+</html> -->
+
+
+
+
+<!-- Session Query -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        function LoginClick(){
+            var userName = document.getElementById("UserName").value
+            sessionStorage.setItem("username",userName)
+            location.href='./home.html'
+        }
+    </script>
+</head>
+<body>
+   
+        <h3>User Login</h3>
+        User Name:
+        <input type="text" id="UserName">
+        <button onclick="LoginClick()">Login</button>
+   
+</body>
+</html> -->
+
+
+
+<!-- Local Storage  -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function loginInClick(){
+            var userName=document.getElementById('UserName').value
+            localStorage.setItem('username',userName)
+            location.href='./home.html'
+        }
+    </script>
+</head>
+<body>
+    UserName
+    <input type="text" id="UserName" placeholder="UserName">
+    <button onclick="loginInClick()">Sign In</button>
+</body>
+</html>

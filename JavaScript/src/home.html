@@ -1,0 +1,95 @@
+<!-- Query String -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        function bodyload(){
+            document.querySelector("p").innerHTML = `Hello! ${document.location.search.slice(document.location.search.indexOf("=")+1)}`
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>Home</h2>
+    <p></p>
+</body>
+</html> -->
+
+
+
+
+<!-- Session Query -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        function afterSignOut(){
+            alert('Session Timeout relocating to login page')
+            sessionStorage.removeItem('username')
+            location.href='./login.html'
+        }
+        function bodyload(){
+            if(sessionStorage.getItem('username') ===null){
+                location.href='./login.html'
+            }
+            else{
+                var x=document.querySelector('p').innerHTML=`Hello ! ${sessionStorage.getItem('username')}`
+                console.log(x)
+                setTimeout(afterSignOut,10000)
+            }
+        
+        }
+        function Signout(){
+            sessionStorage.removeItem('username')
+            location.href='./login.html'
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>Home</h2>
+    <p></p>
+    <button onclick="Signout()">Signout</button>
+</body>
+</html> -->
+
+
+
+<!-- Local Storage  -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyLoad(){
+            if(localStorage.getItem('username')===null){
+                location.href='./login.html'
+            }
+            else{
+                document.querySelector('p').innerHTML=`Hello ! ${localStorage.getItem('username')}`
+            }
+        }
+        function signOut(){
+            localStorage.removeItem('username')
+            location.href='./login.html'
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <p></p>
+    <button onclick="signOut()">Sign out</button>
+</body>
+</html>
