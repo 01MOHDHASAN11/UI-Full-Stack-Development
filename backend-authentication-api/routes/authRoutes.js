@@ -27,5 +27,28 @@ router.post('/register',async(req,res)=>{
 })
 
 
-router.post()
+router.post('/login',async(req,res)=>{
+    try {
+        const {email,password}=req.body
+        if(!email||!password){
+            return res.status(400).json({message:"Both fields are required"})
+        }
+        const registeredUser=await UserSchema.findOne({email})
+        console.log(registeredUser,"registeredUser")
+        if(!registeredUser){
+            console.log("not registeredUser")
+            res.status(404).json({message:"User not found"})
+        }
+        const confirmPassword=await bcrypt.compare(password,registeredUser.password)
+        if(!confirmPassword){
+            return res.status(401).json({message:"Invalid credentials"})
+        }
+        res.status(200).json({message:"Login successful"})
+    } catch (error) {
+        console.log("Internal server error")
+        res.status(500).json({message:"Internal server error",error:error.message})
+    }
+})
+
+
 module.exports=router
